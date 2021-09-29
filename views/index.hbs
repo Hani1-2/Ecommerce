@@ -1,2 +1,118 @@
-<h1>{{title}}</h1>
-<p>Welcome to {{title}}</p>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{title}}</title>
+    <script
+      src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"
+    ></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+  </head>
+  <body>
+    <div class="imgcontainer">
+      <img src="images/logo.png" alt="Logo" class="Logo" />
+    </div>
+    <div>
+      <form
+        action="/"
+        id="EmployeeForm"
+        class="form-horizontal"
+        method="POST"
+        role="form"
+      >
+        <div class="container">
+          <h1>Sign Up</h1>
+          <p>Please fill in this form to create an account.</p>
+          <hr />
+          <label for="f_name"><b>First Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter your first name"
+            name="fname"
+            required
+          />
+
+          <label for="l_name"><b>Last Name</b></label>
+          <input
+            type="text"
+            placeholder="Enter your last name"
+            name="lname"
+            required
+          />
+
+          <label for="user"><b>Username</b></label>
+          <input
+            type="text"
+            placeholder="Enter your username"
+            name="username"
+            required
+          />
+
+          <label for="psw"><b>Password</b></label>
+          <input
+            type="password"
+            placeholder="Enter your password"
+            name="password"
+            required
+          />
+          <label for="Phone"><b>Phone</b></label>
+          <input
+            type="text"
+            placeholder="Enter your phone no"
+            name="phone"
+            required
+          />
+
+          <label for="address"><b>Address</b></label>
+          <input
+            type="text"
+            placeholder="Enter your address"
+            name="address"
+            required
+          />
+          {{! when you get any error try to change for='psw' so for that label your i/p id should be same value
+you provide in for claus }}
+          <label>
+            <input
+              type="checkbox"
+              checked="checked"
+              name="remember"
+              style="margin-bottom: 15px"
+            />
+            Remember me
+          </label>
+
+          <p>
+            By creating an account you agree to our
+            <a href="#" style="color: rgb(12, 13, 14)">Terms & Privacy</a>.
+          </p>
+
+          <div class="form-group">
+            {{! <button type="button" class="cancelbtn">Cancel</button>
+          <a href="index1.html" onClick="index1.html">}}
+            <button class= "btn btn-dark" type="submit">Sign Up</button>
+            <a href="/login">Already have an account Login here</a>
+          </div>
+        </div>
+      </form>
+    </div>
+    {{#if message}}
+      <h4 class="alert alert-danger mt-4">{{message}}</h4>
+    {{/if}}
+    {{#if success}}
+      <h4 class="alert alert-success mt-4">{{success}}</h4>
+    {{/if}}
+  </body>
+</html>
